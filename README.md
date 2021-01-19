@@ -1,6 +1,8 @@
 # awx-logo-change
 AWX Logo Change Procedure
 
+![LOGO](https://raw.githubusercontent.com/azdolinski/awx-logo-change/main/img/example_ansiblelogo.png)
+
 # How to find image files:
 ```bash
 docker run -it ansible/awx:16.0.0 bash
@@ -30,6 +32,7 @@ Add volumes to awx_web:
       - "/root/.awx/awxcompose/logo/ansiblelogo.png:/var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-header.svg:ro"
       - "/root/.awx/awxcompose/logo/dot.png:/var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-login.svg:ro"
 ```
+![LOGO](https://raw.githubusercontent.com/azdolinski/awx-logo-change/main/img/docker-example-change.png)
 
 # Restart awx components
 ```bash
@@ -37,3 +40,10 @@ cd /root/.awx/awxcompose/
 docker-compose down
 docker-compose up -d --build
 ```
+
+
+# Alternative logo2 file:
+```bash
+wget https://raw.githubusercontent.com/azdolinski/awx-logo-change/main/img/ansiblelogo2.png -O /root/.awx/awxcompose/logo/ansiblelogo2.png
+```
+![LOGO2](https://raw.githubusercontent.com/azdolinski/awx-logo-change/main/img/example_ansiblelogo2.png)
