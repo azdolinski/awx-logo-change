@@ -8,8 +8,10 @@ docker> find /var -name logo-login.svg
 ```
 
 File Location inside container:<br>
--> Main Login Page logo: /var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-login.svg<br>
--> After login / top menu logo:  /var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-header.svg<br>
+-> Main Login Page logo [158x93]: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     /var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-login.svg<br>
+-> After login / top menu logo [158x93]: <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    /var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-header.svg<br>
 
 # How to prepere logos for relacment:
 
@@ -27,4 +29,11 @@ Add volumes to awx_web:
 ```bash
       - "/root/.awx/awxcompose/logo/ansiblelogo.png:/var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-header.svg:ro"
       - "/root/.awx/awxcompose/logo/dot.png:/var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-login.svg:ro"
+```
+
+# Restart awx components
+```bash
+cd /root/.awx/awxcompose/
+docker-compose down
+docker-compose up -d --build
 ```
