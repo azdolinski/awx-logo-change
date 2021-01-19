@@ -15,7 +15,7 @@ File Location inside container:<br>
 -> After login / top menu logo [158x93]: <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    /var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-header.svg<br>
 
-# How to prepere logos for relacment:
+# How to prepere logos for replacement:
 
 ```bash
 mkdir /root/.awx/awxcompose/logo
@@ -28,7 +28,7 @@ Edit:
 /root/.awx/awxcompose/docker-compose.yml
 ```
 Add volumes to awx_web:
-```bash
+```yaml
       - "/root/.awx/awxcompose/logo/ansiblelogo.png:/var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-header.svg:ro"
       - "/root/.awx/awxcompose/logo/dot.png:/var/lib/awx/venv/awx/lib/python3.6/site-packages/awx/ui_next/build/static/media/logo-login.svg:ro"
 ```
@@ -40,7 +40,6 @@ cd /root/.awx/awxcompose/
 docker-compose down
 docker-compose up -d --build
 ```
-
 
 # Alternative logo2 file:
 ```bash
